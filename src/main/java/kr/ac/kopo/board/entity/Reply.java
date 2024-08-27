@@ -20,6 +20,6 @@ public class Reply extends BaseEntity {
 
     private String text;
 
-    private String replyer;
+    private String replyer;//gdgdggd
 }
 
