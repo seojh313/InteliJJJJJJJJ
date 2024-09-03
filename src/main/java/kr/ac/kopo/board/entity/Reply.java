@@ -1,9 +1,6 @@
 package kr.ac.kopo.board.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -11,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "board")
 
 public class Reply extends BaseEntity {
     @Id
@@ -21,5 +18,8 @@ public class Reply extends BaseEntity {
     private String text;
 
     private String replyer;//gdgdggd
+
+    @ManyToOne
+    private Board board; // foreign 키 설정, ToString에 추가 작업
 }
 
